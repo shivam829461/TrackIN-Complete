@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/static/services.css" />
+    <title>Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/94a5e29d5c.js" crossorigin="anonymous"></script>
+    <style>
+        
+        h1{
+            font-size: 30px;
+        }
+        .main{
+            margin:7% 20%;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .main2{
+            margin:7% 20%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .main3{
+            margin:7% 20%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .main4
+        {
+            margin:7% 20%;
+            display: flex;
+            justify-content: space-between;
+        }
+        p{
+            color: rgb(255, 255, 255);
+            line-height: 30px;
+            font-size: 20px;
+            text-align:left;
+            letter-spacing: 2px;
+            font-size: 20px;
+        }
+        h1{
+            color: rgb(201, 255, 8);
+            margin-bottom: 10px;
+        }
+        img{
+            width: 400px;
+            height: 250px;
+            
+            margin: 5px 20px;
+            padding: 10px;
+            /* animation: float 3s linear infinite; */
+            /* box-shadow: 2px 2px 40px #ff3352; */
+            box-shadow: rgba(255, 255, 38, 0.35) 0px 5px 15px;
+            
+        }
+        .content1,.content3{
+            margin-right: 5%;
+        }
+        .content2,.content4{
+            margin-left: 5%;
+        }
+        hr{
+            height: 5px;
+            border-top: 2px solid rgba(255, 56, 16, 0.253);
+            /* box-shadow: 3px 2px 40px #ff3352 */
+        }
+        @media (max-width:767px)
+        {
+            h1{
+                font-size: 25px;
+                text-align: center;
+                margin: 30px 0;
+            }
+            .main,.main2,.main3,.main4{
+                display: block;
+                align-items: center;
+                text-align: center;
+                margin:40px 0;
+                justify-content: center;
+            }
+            .content1,.content2,.content3,.content4{
+                text-align: center;
+                
+            }
+            
+            img{
+                margin: 20px 0;
+                width: 300px;
+                height: 200px;
+            }
+            p{
+                text-align: center;
+                font-size: 16px;
+            }
+            
+        }
+        
+        @media (max-width: 450px) {
+        html {
+            font-size: 50%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            text-align: center;
+        }
+        .content1,.content2,.content3{
+            display:block;
+            margin-top: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+        img{
+            margin-top: 2%;
+            
+        }
+        
+        .main,.main2,.main3,.main4{
+            margin: 10% 0;
+        }
+
+}
+        
+     </style>
+</head>
+
+<body>
+    <!-- header section starts  -->
+
+    <header>
+        <section class="nav">
+            <!-- We can also insert any logo here     -->
+
+            <!-- We can also insert any logo here     -->
+            <div class="logo">
+                <a href="{%url 'home'%}"><i class="fa-solid fa-truck-fast fa-bounce fa-lg"></i>TRACK_IN</a>
+            </div>
+
+            <!--  checkbox to control the icon's state    -->
+            <input id="menu-toggle" type="checkbox" />
+            <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+            <!--  main menu    -->
+            <ul class="menu">
+                <li><a href="{%url 'home'%}" target="_top">Home</a></li>
+                <li><a href="{%url 'services'%}">Services</a></li>
+                
+                <li><a href="{%url 'shipform'%}">Ship With Us</a></li>
+                <li><a href="{%url 'partner'%}">Partners</a></li>
+                <li><a href="{%url 'about'%}">About Us</a></li>
+                <li><a href="{%url 'track'%}" class="order">Track</a></li>
+            </ul>
+        </section>
+    </header>
+    <section class="main-1">
+        <div class="main">
+            
+            <div class="content1">
+                
+                <h1>Why Choose TRACK_IN ?</h1>
+                <p>With <b>TRACK_IN</b>, you can now streamline your entire order fulfillment process with the latest technology and innovation. With Shiprocket, you get access to inventory management, automated order mapping, and the cheapest shipping rates in the industry.</p>
+               
+            </div>
+            <div class="img1">
+                <img class="img1" src="/static/services/ship1.png" alt="">
+            </div>
+            
+        </div>
+    </section>
+    <hr>
+    <section class="main-2">
+        <div class="main2">
+            <div class="img2">
+                <img src="/static/services/ship2.png" alt="">
+            </div>
+            <div class="content2">
+                <h1>Automatic Order Mapping</h1>
+                <p>Integrate with marketplaces & automatically sync your
+                    orders directly into the panel. Ship orders in just a few
+                    clicks.</p>
+            </div>
+           
+        </div>
+            
+
+    </section>
+    <hr>
+    <section class="main-3">
+        <div class="main3">
+           
+            <div class="content3">
+                <h1>Reduced Return Orders</h1>
+                <p class="one">Reduce RTO by almost 5% with an automated NDR
+                    flow. Know buyer’s delivery preferences and feedback
+                    in real-time to avoid unnecessary delays.</p>
+                    
+            </div>
+            <div class="img3">
+                <img src="/static/services/ship3.png" alt="">
+            </div>
+            
+        </div>
+    </section>
+    <hr>
+    <section class="main-4">
+        <div class="main4">
+            
+            <div class="img4">
+                <img src="/static/services/ship4.png" alt=""> 
+            </div>
+            <div class="content4">
+                <h1>Shipping From Multiple Locations</h1>
+                <p class="one">Ship at your convenience with unlimited pickup
+                    locations. Schedule a pick from anywhere in the
+                    country and ship across India and abroad.</p>
+                
+         </div>
+            
+        </div>
+    </section>
+    
+
+    <!-- hero section ends   -->
+</body>
+
+</html>

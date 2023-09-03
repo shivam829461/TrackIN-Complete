@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Locate Us</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <style>
+    #map {
+      height: 705px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script>
+    var map;
+
+    // Coordinates of the location
+    var locationLat = 22.8046;
+    var locationLon = 86.2029;
+
+    // Create a map instance and set its view to the location
+    map = L.map('map').setView([locationLat, locationLon], 16);
+
+    // Add a tile layer from OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+      maxZoom: 18,
+    }).addTo(map);
+
+    
+    var marker = L.marker([locationLat, locationLon]).addTo(map);
+    var marker2 = L.marker([22.8384, 86.2294]).addTo(map);
+    marker2.bindPopup("TRACKIn Corporate Office").openPopup();
+    marker.bindPopup("TRACKIn Corporate Office").openPopup();
+  </script>
+</body>
+</html>

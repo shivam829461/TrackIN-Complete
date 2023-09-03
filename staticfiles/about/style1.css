@@ -1,0 +1,141 @@
+.about {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#hope {
+    background-image: beige;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    width: 100vw;
+}
+
+marquee {
+    margin-top: 10px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 27px;
+    margin-top: 30px;
+    box-sizing: border-box;
+
+}
+
+.h {
+    color: beige;
+    position: relative;
+    bottom: 160px;
+    text-align: center;
+    line-height: 45px;
+}
+
+h5 {
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+h1 {
+    position: relative;
+    bottom: 20px;
+
+}
+
+.main-1 {
+    background-color: beige;
+    height: 40%;
+    position: relative;
+    bottom: 90px;
+    z-index: 1;
+    width: 100vw;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.content-1 {
+    position: relative;
+    right: 30px;
+    top: 30px;
+}
+
+.content-1 h1 {
+    font-size: 30px;
+    position: relative;
+    top: 20px;
+
+}
+
+.content-1 p {
+    position: relative;
+    top: 30px;
+    font-weight: lighter;
+    font-size: 17px;
+
+}
+
+.track {
+    height: 200px;
+    width: 400px;
+    margin-top: 30px;
+}
+
+.main-2 {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.main2 {
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+    left: 50px;
+    top: 30px;
+
+}
+
+.main2 h1 {
+    font-size: 30px;
+    line-height: 60px;
+}
+
+.main2 p {
+    line-height: 22px;
+    font: 14px;
+}
+
+.tracky {
+    height: 200px;
+    width: 400px;
+    margin-top: 30px;
+    margin-right: 20%;
+}
+
+.main3 {
+    background-color: beige;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.main3 img {
+    height: 300px;
+}
+
+.wrote {
+    display: grid;
+}
+
+.wrote p {
+    font-size: 18px;
+}
+
+.wrote h1 {
+    font-size: 26px;
+}

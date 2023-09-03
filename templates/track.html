@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/94a5e29d5c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <title>Track</title>
+    <style type="text/css">
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            height: 450px;
+            background: rgba(2, 70, 50, 0.498);
+        }
+
+        /* .box {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        } */
+
+        .box {
+            width: 100%;
+            height: 400px;
+            margin-top: 15px;
+
+            align-items: center;
+            text-align: center;
+
+
+        }
+
+
+        .two .one {
+            margin-bottom: 10px;
+        }
+
+        .loc-btn {
+            width: 250px;
+            height: 40px;
+            margin: 5px;
+
+
+        }
+
+        .two button {
+            width: 300px;
+            font-size: 20px;
+            background-color: green;
+            border-radius: 5px;
+            border: 2px solid green;
+            color: white
+        }
+
+        .two button:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        .container .box .inp {
+            width: 230px;
+            height: 50px;
+            margin-left: 30px;
+        }
+
+        .container .box h3 {
+            margin-left: 20px;
+        }
+
+        button {
+            background-color: green;
+
+            font-size: 15px;
+
+            width: 80px;
+            border-radius: 10px;
+            border: 2px solid rgba(122, 128, 0, 0.76);
+            color: white;
+
+
+        }
+
+        button:hover {
+            cursor: pointer;
+            color: black;
+            color: #e1ff02;
+        }
+
+        .how-to-track h1 {
+            margin-left: 100px;
+            color: white;
+        }
+
+        li {
+
+            color: white;
+        }
+
+        .content-track {
+            margin: 5% 10%;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 35px;
+            color: #e1ff02;
+            padding-top: 15px;
+        }
+
+        .ol-content {
+            font-size: 20px;
+            margin: 3% 10%;
+            color: white;
+            ;
+        }
+
+        .shipment {
+            padding: 4% 5%;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+
+        label {
+            font-size: 20px;
+            color: whitesmoke;
+
+        }
+
+        #input {
+            margin: 1%;
+            border: 1px solid rgb(3, 0, 0);
+        }
+
+        h3 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 25px;
+        }
+
+        #input {
+            /* border-radius: 10px; */
+            /* align-items: center; */
+            width: 140px;
+            height: 30px;
+            border-radius: 10%;
+            padding: 10px;
+        }
+
+        .inputNo {
+            font-weight: bold;
+        }
+
+        .ship-cont {
+            font-size: 15px;
+            margin-top: 1%;
+            color: white;
+        }
+
+        .a-link {
+            font-size: 20px;
+            color: #e1ff02;
+        }
+
+        .btns {
+            margin: 3% 5%;
+            /* padding-top: 2%; */
+        }
+
+        #down {
+            /* margin-top: 100%; */
+            padding-bottom: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="nav">
+            <!-- We can also insert any logo here     -->
+
+            <!-- We can also insert any logo here     -->
+            <div class="logo">
+                <a href="{%url 'home'%}"><i class="fa-solid fa-truck-fast fa-bounce fa-lg"></i>TRACK_IN</a>
+            </div>
+
+            <!--  checkbox to control the icon's state    -->
+            <input id="menu-toggle" type="checkbox" />
+            <label class="menu-button-container" for="menu-toggle">
+                <div class="menu-button"></div>
+            </label>
+            <!--  main menu    -->
+            <ul class="menu">
+                <li><a href="{%url 'home'%}" target="_top">Home</a></li>
+                <li><a href="{%url 'services'%}">Services</a></li>
+
+                <li><a href="{%url 'shipform'%}">Ship With Us</a></li>
+                <li><a href="{%url 'partner'%}">Partners</a></li>
+                <li><a href="{%url 'about'%}">About Us</a></li>
+                <li><a href="{%url 'track'%}" class="order">Track</a></li>
+            </ul>
+        </section>
+    </header>
+    <div class="container">
+        <div class="box">
+            <h1 class="shipment">Track Your Shipment </h1>
+            <form method="post" action="{%url 'ship'%}">
+                {% csrf_token %}
+                  <input type="radio" id="html" name="fav_language" value="HTML">
+                  <label for="waybill">Way Bill</label>
+                  <input type="radio" id="css" name="fav_language" value="CSS">
+                  <label for="refNo">Ref. no.</label><br>
+                <br>
+                <label class="inputNo" for="input">Shipment No: </label>
+                <input type="text" id="input" placeholder="Enter No" name="ref_no" required>
+                <button type="submit" >Go</button>
+
+
+            </form>
+            <center class="ship-cont">for Example: 8210695821,7322810694</center>
+            <br>
+            <br>
+            <a class="a-link" href="#down">How To Track <i class="fa fa-chevron-right" aria-hidden="true"></i> </a>
+
+            <div class="btns">
+                <a href="{%url 'map'%}"  ><button class="loc-btn">Location finder</button></a>
+
+                <!-- <button >Transit Time & Price Finder</button> -->
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="content-track" id="down">
+        <h1>How To Track</h1>
+        <ol class="ol-content">
+            <li>Order Received:- The customer places the order from your eCommerce store. The purchase order is
+                confirmed and sent to the vendor </li>
+            <br>
+            <li>Shipped:- Seller sends the customer order (mostly using a shipping service) to the provided address.
+            </li>
+
+            <br>
+            <li>Delivered: The order package is dropped at the final destination successfully at the customer’s address.
+            </li>
+
+            <br>
+
+            <li>Completed: The delivery person marks the order status as completed after all the formalities are
+                done.<br>
+                However, this procedure may differ.
+                It may depend upon the nature of the business and store owner preferences.</li>
+            <br>
+            Actually, the order delivery process depends on the store owner’s choices and preferences. The better the
+            eCommerce order tracking <br> system of the store owner, the more satisfied customers are.<br>
+
+            <br>
+            So, let’s see the benefits of eCommerce order fulfillment tracking for customers and business owners.
+
+            <br>
+            
+            <br>
+
+            Boost your sales and improve conversion rates with the top-rated TrackIN.
+        </ol>
+    </div>
+
+
+
+
+</body>
+
+</html>

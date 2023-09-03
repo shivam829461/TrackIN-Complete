@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Powered Tracking</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .message-box {
+            background-color: beige;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .message {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        tr,
+        td {
+            padding: 15px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            transform: scale(0.95);
+        }
+
+        p {
+            font-size: small;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="message-box">
+            <div class="message">
+                <table border="1">
+                    <tr>
+                        <td>Amount:</td>
+                        <td>Rs. {{postage}}</td>
+                    </tr>
+                    <tr>
+                        <td>Distance:</td>
+                        <td>{{distance}} Km</td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Weight:</td>
+                        <td>{{weight}} Kg</td>
+                    </tr> -->
+                    <tr>
+                        <td>Expected Transit Time:</td>
+                        <td>{{time}} days</td>
+                    </tr>
+                </table>
+                <p><b>Note*:</b>Displayed Result Doesn't Mean We Ship To Every Place.</p>
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="{%url 'postage'%}" class="button">Go Back</a>
+        </div>
+    </div>
+</body>
+
+</html>

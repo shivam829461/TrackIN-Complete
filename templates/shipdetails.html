@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/shipdetailss.css">
+</head>
+<body>
+    
+    <h1>Shipment <span class="yellow">Details</pan></h1>
+       
+        
+        <table class="container">
+            <thead>
+                <tr>
+                    <th><h1>Shipment Details</h1></th>
+                    <th><h1>Status and Scan</h1></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for n in trackin %}
+                <tr>
+                    
+                    <td>Waybill</td>
+                    <td>{{n.waybill}}</td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td>Pickup Date</td>
+                    <td>{{n.pickup}}</td>
+                    
+                </tr>
+                <tr>
+                    <td>From</td>
+                    <td>{{n.origin}}</td>
+                    
+                </tr>
+                <tr>
+                    <td>To</td>
+                    <td>{{n.destination}}</td>
+                    
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>{{n.status}}</td>
+                    
+                </tr>
+                <tr>
+                    <td>Expected Date Of Delivery</td>
+                    <td>{{n.EDD}}</td> 
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td>{{n.phone}}</td> 
+                </tr>
+                <tr>
+                    <td>Recipient</td>
+                    <td>{{n.receiver}}</td> 
+                </tr>
+                <tr>
+                    <td>Last Scan</td>
+                    <td>{{n.lastscan}}</td> 
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+</body>
+</html>

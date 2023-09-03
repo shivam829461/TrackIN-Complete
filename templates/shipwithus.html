@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/static/styles.css" />
+    <title>Ship With Us</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> -->
+    <script src="https://kit.fontawesome.com/94a5e29d5c.js" crossorigin="anonymous"></script>
+    <style>
+        form {
+            color: white;
+            margin: 0 auto;
+            margin-top: 12px;
+            max-width: 500px;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: medium;
+        }
+
+        html{
+            overflow: auto;
+        }
+
+        h2, caption {
+            text-align: center;
+            margin-top: 20px;
+            padding: 4px;
+            font-size: large;
+            color: white;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #428e46;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header section starts  -->
+
+    <header>
+        <section class="nav">
+            <!-- We can also insert any logo here     -->
+
+            <!-- We can also insert any logo here     -->
+            <div class="logo">
+                <a href="{%url 'home'%}"><i class="fa-solid fa-truck-fast fa-bounce fa-lg"></i>TRACK_IN</a>
+            </div>
+
+            <!--  checkbox to control the icon's state    -->
+            <input id="menu-toggle" type="checkbox" />
+            <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+            <!--  main menu    -->
+            <ul class="menu">
+                <li><a href="{%url 'home'%}" target="_top">Home</a></li>
+                <li><a href="{%url 'services'%}">Services</a></li>
+                
+                <li><a href="{%url 'postage'%}"><b>AI</b> Powered Tracking</a></li>
+                <li><a href="{%url 'partner'%}">Partners</a></li>
+                <li><a href="{%url 'about'%}">About Us</a></li>
+                <li><a href="{%url 'track'%}" class="order">Track</a></li>
+            </ul>
+        </section>
+    </header>
+    
+    <!-- Form starts here! -->
+    <h2>
+        <caption>Shipping Details</caption>
+    </h2>
+    <form method="post" >
+        {% csrf_token %}
+        <div>
+            <label for="type">Type:</label> <br>
+            <select name="type" id="type" required>
+                <option value="select">--Select--</option>
+                <option value="Individual">Individual</option>
+                <option value="Organization">Organization</option>
+            </select>
+            <!-- <select name="type">
+                {% for city in cities %}
+                    <option value="{{ city }}">{{ city }}</option>
+                {% endfor %}
+            </select> -->
+        </div>
+
+        <br><div>
+            <label for="Fname">First Name:</label> <br>
+            <input type="text" name="Fname" pattern="[A-Za-z]+" title="Enter Valid First Name" id="Fname" required >
+            <br><label for="Lname">Last Name:</label> <br>
+            <input type="text" name="Lname" pattern="[A-Za-z]+" title="Enter Valid Last Name" id="Lname" required>
+        </div>
+
+        <div>
+            <br><label>Address:</label> <br>
+            <br><label for="address1">Address Line 1:</label> <br>
+            <input type="text" name="address1" id="address1" required>
+            <br><label for="address2">Address Line 2:</label> <br>
+            <input type="text" name="address2" id="address2" required>
+            <br><label for="city">City:</label> <br>
+            <input type="text" name="city" id="city" required>
+            <br><label for="state">State / Province:</label> <br>
+            <input type="text" name="state" pattern="[A-Za-z\s]+" title="Enter Valid State" id="state" required>
+            <br><label for="zip">Postal / Zip Code:</label> <br>
+            <input type="text" name="zip" pattern="[0-9]{6}" title="Enter a valid ZIP code (6 digits)" id="zip" required>
+            <br><label for="country">Country:</label> <br>
+            <input type="text" name="country" pattern="[A-Za-z\s]+" title="Enter a Valid Country" id="country" required> 
+        </div>
+
+        <div>
+           <label for="phone">Phone Number:</label>
+            <input type="tel" name="phone" pattern="[0-9]{6,11}" title="Enter a valid phone number (6 to 11 digits)" id="phone" required>
+          </div>
+          
+       <div>
+            <label for="email">E-mail:</label> <br>
+            <input type="email" name="email" id="email"  required>
+       </div>
+       
+       <div>
+            <label for="feedback">Any Feedback:</label> <br>
+            <textarea name="feedback" id="feedback" cols="35" rows="7"></textarea>
+       </div>        
+
+       <div>
+            <input type="submit" name="submit" id="submit">
+       </div>
+    </form>
+</body>
+</html>

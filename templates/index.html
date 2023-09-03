@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>TRACKin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/94a5e29d5c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header section starts  -->
+
+    <header>
+        <section class="nav">
+            <!-- We can also insert any logo here     -->
+
+            <!-- We can also insert any logo here     -->
+            <div class="logo">
+                <a href="{%url 'home'%}"><i class="fa-solid fa-truck-fast fa-bounce fa-lg"></i>TRACK_IN</a>
+            </div>
+
+            <!--  checkbox to control the icon's state    -->
+            <input id="menu-toggle" type="checkbox" />
+            <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+            <!--  main menu    -->
+            <ul class="menu">
+                <li><a href="{%url 'home'%}" target="_top">Home</a></li>
+                <li><a href="{%url 'services'%}">Services</a></li>
+                
+                <li><a href="{%url 'shipform'%}">Ship With Us</a></li>
+                <li><a href="{%url 'partner'%}">Partners</a></li>
+                <li><a href="{%url 'about'%}">About Us</a></li>
+                <li><a href="{%url 'track'%}" class="order">Track</a></li>
+            </ul>
+        </section>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- hero section starts  -->
+
+    <section class="home" id="home ">
+        <div class="content">
+            <!-- Tagline -->
+            <h3 class="mainfont">
+                TRACK <span class="yellowColor"> IN</span> courier tracking
+            </h3>
+            <h3>
+                Powered By Track C<span class="yellowColor">our</span>ier for instant
+                <span class="yellowColor">Delivery</span>
+            </h3>
+            <!--Description  -->
+            <p>
+                Welcome to Trackin, the leading tracking company revolutionizing the way individuals and giant corporations manage their shipments. With our cutting-edge technology, we empower users to easily track their products and enjoy hassle-free shipping experiences. Our comprehensive platform offers real-time updates, robust logistics solutions, and unparalleled customer support, making us the preferred choice for businesses seeking efficient and reliable tracking services. Trust Trackin to streamline your shipping processes and deliver success.
+            </p>
+
+            <!-- CTA -->
+            <a href="{%url 'track'%}" class="btn btn-track">TRACK NOW</a>
+        </div>
+        <!-- Hero image -->
+
+        <div class="image">
+            <img src={% static 'images/front.jpg' %} alt=" " />
+        </div>
+        
+    </section>
+    <section class="footer-section">
+        
+    </section>
+    
+
+    <!-- hero section ends   -->
+</body>
+
+</html>

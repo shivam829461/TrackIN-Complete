@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/static/styles.css" />
+    <title>AI Powered Tracking</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> -->
+    <script src="https://kit.fontawesome.com/94a5e29d5c.js" crossorigin="anonymous"></script>
+    <style>
+        form {
+            color: white;
+            margin: 0 auto;
+            margin-top: 12px;
+            max-width: 500px;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: medium;
+        }
+
+        html{
+            overflow: auto;
+        }
+
+        h2, caption {
+            text-align: center;
+            margin-top: 20px;
+            padding: 4px;
+            font-size: large;
+            color: white;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #428e46;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header section starts  -->
+
+    <header>
+        <section class="nav">
+            <!-- We can also insert any logo here     -->
+
+            <!-- We can also insert any logo here     -->
+            <div class="logo">
+                <a href="{%url 'home'%}"><i class="fa-solid fa-truck-fast fa-bounce fa-lg"></i>TRACK_IN</a>
+            </div>
+
+            <!--  checkbox to control the icon's state    -->
+            <input id="menu-toggle" type="checkbox" />
+            <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+            <!--  main menu    -->
+            <ul class="menu">
+                <li><a href="{%url 'home'%}" target="_top">Home</a></li>
+                <li><a href="{%url 'services'%}">Services</a></li>
+                
+                <li><a href="{%url 'shipform'%}">Ship With Us</a></li>
+                <li><a href="{%url 'partner'%}">Partners</a></li>
+                <li><a href="{%url 'about'%}">About Us</a></li>
+                <li><a href="{%url 'track'%}" class="order">Track</a></li>
+            </ul>
+        </section>
+    </header>
+    
+    <!-- Form starts here! -->
+    <h2>
+        <caption>Shipping Details</caption>
+    </h2>
+    <form method="post" >
+        {% csrf_token %}
+        <div>
+            <label for="type">Type of Service:</label> <br>
+            <select name="type" id="type" required>
+                <option value="Domestic">Domestic</option>
+                <option value="International">International</option>
+            </select>
+        </div><br>
+        <div>
+            <label for="article">Article Type:</label> <br>
+            <select name="articleType">
+                {% for article_type, k in article_types.items %}
+                <option value="{{ article_type }}">{{ article_type }} </option>
+                {% endfor %}
+            </select><br><br>
+        </div>
+        <div>
+            <h2>Ship From</h2>
+        </div>
+        <br><div>
+            <label for="from">City/District:</label> <br>
+            
+            <input type="text" name="from" pattern="[A-Za-z\s]+" title="Enter Valid City" id="from" required>
+            
+            
+            <br><label for="pin">State:</label> <br>
+            <select name="state1" pattern="[A-Za-z\s]+" required>
+                <option value=""></option>
+                {% for state, capital in indian_states.items %}
+                <option value="{{ state }}">{{ state }} ({{ capital }})</option>
+                {% endfor %}
+            </select>
+            
+        </div>
+        
+        <div>
+            <br><h2>Ship To</h2> <br>
+            
+            <br><label for="cityto">City/District:</label> <br>
+            <input type="text" name="city2" pattern="[A-Za-z\s]+" title="Enter Valid City" id="city2" required>
+            
+            
+            <!-- <br><label for="pinto">State:</label> <br>
+            <select name="state2" pattern="[A-Za-z\s]+" required>
+                <option value=""></option>
+                {% for state, capital in indian_states.items %}
+                <option value="{{ state }}">{{ state }} ({{ capital }})</option>
+                {% endfor %}
+            </select> -->
+
+
+
+
+            <br><label for="country">Country(For International Shipments):</label> <br>
+            <input type="text" name="country" id="country" >
+            <br>
+            <br><label for="weight">Weight(in Kg):</label> <br>
+            <input type="number" name="weight" step="0.01" min="0" max="100" placeholder="0.00" title="Enter Valid weight" id="weight" required>
+
+            <br><br>
+            
+        </div>
+
+               
+
+       <div>
+            <input type="submit" name="submit" id="submit">
+       </div>
+    </form>
+</body>
+</html>
