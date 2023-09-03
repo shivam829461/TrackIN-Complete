@@ -142,7 +142,7 @@ def get_cities(request):
                     time=7
                 elif t_dis>1000 and t_dis<1500:
                     time=9
-                else:
+                elif t_dis>1500:
                     time=15
                 
                 
