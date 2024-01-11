@@ -19,6 +19,9 @@ html {
 body {
     background: #212531;
     margin: 0;
+    
+    overflow: hidden;
+        
 }
 
 header {
