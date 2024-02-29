@@ -82,11 +82,11 @@ WSGI_APPLICATION = "trackin.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',  # Replace with your database name
-        'USER': 'postgres',  # Replace with your PostgreSQL username
+        'NAME': 'verceldb',  # Replace with your database name
+        'USER': 'default',  # Replace with your PostgreSQL username
         'PASSWORD': os.getenv("db_pass"),  # Replace with your PostgreSQL password
-        'HOST': 'containers-us-west-82.railway.app',  # Replace with your PostgreSQL host if it's not on localhost
-        'PORT': '6466',  # Leave empty to use the default PostgreSQL port (5432)
+        'HOST': 'ep-shrill-snowflake-a4mt9v2l-pooler.us-east-1.aws.neon.tech',  # Replace with your PostgreSQL host if it's not on localhost
+        'PORT': '',  # Leave empty to use the default PostgreSQL port (5432)
     }
 }
 
